@@ -75,3 +75,9 @@ enabled. Other people have verified that this does work on the 5775C and 5700HQ.
 [verif1]: https://bugzilla.kernel.org/show_bug.cgi?id=103351#c29
 [verif2]: https://bugzilla.kernel.org/show_bug.cgi?id=103351#c30
 
+# Microcode sources:
+
+- `5x75c.bin` was extracted from `E7926IMS.1C0` in
+  <http://download.msi.com/bos_exe/7926v1C.zip>
+- `5700hq/*.bin` was extracted from `E16J1IMS.10F` in
+  <http://download.msi.com/bos_exe/nb/E16J1IMS.10F.zip>

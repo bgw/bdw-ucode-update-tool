@@ -10,7 +10,7 @@ grep microcode /proc/cpuinfo
 
 echo
 echo '*** Applying microcode updates'
-for i in 5700hq/*.bin 5x75c/*.bin; do
+for i in 5700hq/*.bin 5x75c.bin; do
   cat "$i" > /dev/cpu/microcode
 done;
 
