@@ -54,11 +54,20 @@ On Linux:
 ```sh
 $ git clone https://github.com/bgw/bdw-ucode-update-tool.git
 $ cd bdw-ucode-update-tool
-$ sudo ./install-linux.sh
+$ sudo ./install.sh
 ```
 
 Repeat this every time your machine starts up or resumes from hibernation, as
 microcode updates aren't saved across reboots.
+
+If you're on a Debian-based system, we have experimental persistence support:
+
+```sh
+$ sudo ./install.sh --persist-debian
+```
+
+By running with `--persist-debian`, you should no longer need to re-run this 
+script after every reboot.
 
 # Tested on...
 
