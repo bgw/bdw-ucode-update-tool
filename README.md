@@ -64,5 +64,14 @@ microcode updates aren't saved across reboots.
 
 I only have a i5-5675C, so I've only tested it on that. The system seems to run
 fine, even under extreme CPU, GPU, and IO load, with Speedstep and Turbo boost
-enabled. If you've got a different CPU (the 5775C or 5700HQ), let me know, and
-I'll update this section.
+enabled. Other people have verified that this does work on the 5775C and 5700HQ.
+
+| Processor | Verified?      |
+| --------- | -------------- |
+| i5-5675C  | Works for me.  |
+| i7-5775C  | [Here][verif2] |
+| i7-5700HQ | [Here][verif1] |
+
+[verif1]: https://bugzilla.kernel.org/show_bug.cgi?id=103351#c29
+[verif2]: https://bugzilla.kernel.org/show_bug.cgi?id=103351#c30
+
