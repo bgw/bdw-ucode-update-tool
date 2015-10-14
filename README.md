@@ -66,8 +66,16 @@ If you're on a Debian-based system, we have experimental persistence support:
 $ sudo ./install.sh --persist-debian
 ```
 
-By running with `--persist-debian`, you should no longer need to re-run this 
+By running with `--persist-debian`, you should no longer need to re-run this
 script after every reboot.
+
+To uninstall the persistent Debian updates, simply delete
+`/lib/firmware/intel-ucode` and reinstall the `intel-microcode` package:
+
+```
+$ sudo rm -rf /lib/firmware/intel-ucode
+$ sudo aptitude reinstall intel-microcode
+```
 
 # Tested on...
 
@@ -86,7 +94,5 @@ enabled. Other people have verified that this does work on the 5775C and 5700HQ.
 
 # Microcode sources:
 
-- `5x75c.bin` was extracted from `E7926IMS.1C0` in
-  <http://download.msi.com/bos_exe/7926v1C.zip>
-- `5700hq/*.bin` was extracted from `E16J1IMS.10F` in
-  <http://download.msi.com/bos_exe/nb/E16J1IMS.10F.zip>
+- `0x13.bin` was extracted from `E16J2IMS.114` in
+  <http://download.msi.com/bos_exe/nb/E16J2IMS.114.zip>

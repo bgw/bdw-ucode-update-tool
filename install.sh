@@ -1,6 +1,6 @@
 #!/bin/sh -e
 
-UPDATE_FILES="5700hq/*.bin 5x75c.bin"
+UPDATE_FILES="0x13.bin"
 
 if [ "$1" = '-h' -o "$1" = '--help' ]; then
   echo "sudo $0 [--help] [--persist-debian]"
