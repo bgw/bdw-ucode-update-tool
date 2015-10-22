@@ -10,6 +10,18 @@ very specific hardware. This may (though highly unlikely) damage your hardware.
 If that happens, that's your own fault. Not mine, not Intel's, and certainly not
 MSI's.
 
+In addition to potentially damaging your hardware, incorrect installation on a
+system where `glibc` is compiled with hardware lock elision (hle) enabled may
+cause anything linked to `libpthread` to segfault (e.g. `systemd`, `udev`, etc).
+To safely install, *you must use use the kernel's early loading mechanism
+(supported by `--persist-debian`).* If you wish to install this update without
+the script, please [read and understand this post][henrique].
+
+If you do make your computer unbootable (for software reasons), it should be
+possible to fix it using a live CD.
+
+[henrique]: https://bugzilla.kernel.org/show_bug.cgi?id=103351#c65
+
 ---
 
 # Why?
