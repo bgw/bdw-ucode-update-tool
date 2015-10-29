@@ -51,17 +51,24 @@ script][python].
 # What *should* this fix?
 
 - MCE kernel panics on Linux under normal usage
-- Office 2016 Installation on Windows
-- Certain Steam games on Windows
-- Linux virtual machines on Windows
+- BSOD with Office 2016 Installation on Windows
+- BSOD with Certain Source-engine games on Windows
+- BSOD with Linux virtual machines on Windows
 
-I don't use Windows however, so I've only personally verified the first case. I
-also don't have installation instructions for Windows, as I don't know how to
-install custom microcode updates on Windows.
+I don't use Windows however, so I've only personally verified the first case.
 
 # Install instructions
 
-On Linux:
+## Windows
+
+I don't have detailed step-by-step instructions yet, but you should be able to
+install `0x13.dat`, which is in this repository, with [VMWare's microcode update
+driver][win-driver]. See [this github issue][issue-2] for more details.
+
+[win-driver]: https://labs.vmware.com/flings/vmware-cpu-microcode-update-driver
+[issue-2]: https://github.com/bgw/bdw-ucode-update-tool/issues/2
+
+## Linux
 
 ```sh
 $ git clone https://github.com/bgw/bdw-ucode-update-tool.git
