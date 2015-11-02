@@ -61,11 +61,36 @@ I don't use Windows however, so I've only personally verified the first case.
 
 ## Windows
 
-I don't have detailed step-by-step instructions yet, but you should be able to
-install `0x13.dat`, which is in this repository, with [VMWare's microcode update
-driver][win-driver]. See [this github issue][issue-2] for more details.
+Before starting update microcode, [please read this][win-driver].
+
+1.  Download file from [the VMware site][win-driver] and extract the files
+    contained within the zip.
+
+2.  Download [`microcode_amd.bin`][] and [`microcode_amd_fam15h.bin`][] and
+    place them in the same directory as where the files from step 1 were placed.
+
+    > The VMware microcode update driver requires those two files even if you
+    > don't have an AMD CPU. Alternatively, you can use two empty files with the
+    > same name instead.
+
+3.  Download [`0x13.dat`][] and rename it to `microcode.dat`. Place it in the
+    same directory as where the files from step 1 were placed.
+
+4.  Right click the `install.bat` file from step 1 and click
+    "Run as an Administrator"; It should work!
+
+5.  After everything is done, you can check "Event Viewer" for check update
+    status.
+
+Once everything is working, you can use virtual machines with Linux or play
+Source Engine games, even if you reboot Windows.
+
+*See [this github issue][issue-2] for more details.*
 
 [win-driver]: https://labs.vmware.com/flings/vmware-cpu-microcode-update-driver
+[`microcode_amd.bin`]: https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/plain/amd-ucode/microcode_amd.bin
+[`microcode_amd_fam15h.bin`]: https://git.kernel.org/cgit/linux/kernel/git/firmware/linux-firmware.git/plain/amd-ucode/microcode_amd_fam15h.bin
+[`0x13.dat`]: https://github.com/bgw/bdw-ucode-update-tool/raw/master/0x13.dat
 [issue-2]: https://github.com/bgw/bdw-ucode-update-tool/issues/2
 
 ## Linux
