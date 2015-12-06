@@ -61,10 +61,14 @@ I don't use Windows however, so I've only personally verified the first case.
 
 ## Windows
 
-Before starting update microcode, [please read this][win-driver].
+Some motherboard manufacturers are now distributing UEFI updates with this
+microcode update. Check with your motherboard manufacturer first to see if a
+UEFI update is available containing the `0x13` microcode update for Broadwell.
+If it's available, you should use that instead.
 
-1.  Download file from [the VMware site][win-driver] and extract the files
-    contained within the zip.
+1.  Download the microcode update driver from [VMware's website][win-driver] and
+    extract the files contained within the zip. Make sure to read and understand
+    the information on that page.
 
 2.  Download [`microcode_amd.bin`][] and [`microcode_amd_fam15h.bin`][] and
     place them in the same directory as where the files from step 1 were placed.
@@ -95,6 +99,15 @@ Source Engine games, even if you reboot Windows.
 
 ## Linux
 
+Before using this tool, check with your distribution's available packages. Some
+distributions now carry this microcode as part of their intel-microcode
+packages. For example, if you're running Debian Jessie, you should install
+[`intel-microcode` from `jessie-backports`][backports]. Some motherboard
+manufacturers also have UEFI updates that fix include this update.
+
+You should be running microcode version `0x13` or greater. You can check this by
+running `grep microcode /proc/cpuinfo`.
+
 ```sh
 $ git clone https://github.com/bgw/bdw-ucode-update-tool.git
 $ cd bdw-ucode-update-tool
@@ -120,6 +133,8 @@ To uninstall the persistent Debian updates, simply delete
 $ sudo rm -rf /lib/firmware/intel-ucode
 $ sudo aptitude reinstall intel-microcode
 ```
+
+[backports]: https://packages.debian.org/jessie-backports/intel-microcode
 
 # Tested on...
 
